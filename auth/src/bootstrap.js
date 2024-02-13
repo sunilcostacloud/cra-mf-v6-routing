@@ -13,7 +13,7 @@ const mount = ({ mountPoint, initialPathname, routingStrategy }) => {
   return () => queueMicrotask(() => root.unmount());
 };
 
-console.log(process.env);
+// console.log(process.env);
 
 var localRoot = document.getElementById("_auth-dev-root");
 
