@@ -1,5 +1,5 @@
 import React from "react";
-import { mount } from "auth/AuthApp";
+import { mount } from "products/ProductsApp";
 import { useEffect, useRef } from "react";
 import { productsRoutingPrefix } from "../routing/constants";
 import { useLocation, useNavigate } from "react-router-dom";

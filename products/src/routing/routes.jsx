@@ -10,11 +10,11 @@ export const routes = [
     element: <Layout />,
     children: [
       {
-        path: "products",
+        path: "products-list",
         element: <Products />,
       },
       {
-        path: "products/:id",
+        path: "product/:id",
         element: <ProductDetails />,
       },
     ],
