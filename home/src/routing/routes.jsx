@@ -3,6 +3,11 @@ import Home from "../components/Home";
 import { Layout } from "../components/Layout";
 import PageNotFound from "../components/PageNotFound";
 import Pricing from "../components/Pricing";
+import { Navigate } from "react-router-dom";
+
+const dispatchCustomEvent = (path) => {
+  window.dispatchEvent(new CustomEvent("[home] navigated", { detail: path }));
+};
 
 export const routes = [
   {
@@ -11,7 +16,13 @@ export const routes = [
     children: [
       {
         index: true,
-        element: <Home />,
+        // element: <Home />,
+        element: (
+          <Navigate
+            to="/auth/login"
+            onNavigate={() => dispatchCustomEvent("/auth/login")}
+          />
+        ),
       },
       {
         path: "pricing",
