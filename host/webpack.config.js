@@ -1,6 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { dependencies } = require("./package.json");
+const InterpolateHtmlPlugin = require("interpolate-html-plugin");
+const { DefinePlugin } = require("webpack");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 module.exports = (_, argv) => ({
   output: {
@@ -89,7 +94,16 @@ module.exports = (_, argv) => ({
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/favicon.ico",
       manifest: "./public/manifest.json",
+    }),
+    new InterpolateHtmlPlugin({
+      PUBLIC_URL: process.env.PUBLIC_URL || "",
+      // You can define other variables here as needed
+    }),
+    new DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+      // You can define other environment variables here as needed
     }),
   ],
   target: "web",

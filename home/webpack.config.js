@@ -92,6 +92,7 @@ module.exports = (_, argv) => ({
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/favicon.ico",
       manifest: "./public/manifest.json",
     }),
     new InterpolateHtmlPlugin({
