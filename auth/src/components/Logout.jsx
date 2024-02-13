@@ -3,20 +3,55 @@ import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
   const navigate = useNavigate();
+
+  const handleHomeNavigate = () => {
+    window.dispatchEvent(
+      new CustomEvent("[auth] navigated", {
+        detail: "/",
+      })
+    );
+  };
+
+  const handlePricingNavigate = () => {
+    window.dispatchEvent(
+      new CustomEvent("[auth] navigated", {
+        detail: "/pricing",
+      })
+    );
+  };
+
+  const handleProductListNavigate = () => {
+    window.dispatchEvent(
+      new CustomEvent("[auth] navigated", {
+        detail: "/products/products-list",
+      })
+    );
+  };
+
+  const handleProductDetailsNavigate = () => {
+    window.dispatchEvent(
+      new CustomEvent("[auth] navigated", {
+        detail: "/products/product/:123",
+      })
+    );
+  };
+
+  const handleUnauthorizedNavigate = () => {
+    window.dispatchEvent(
+      new CustomEvent("[auth] navigated", { detail: "/unauthorized" })
+    );
+  };
+
   return (
     <>
       <h1>Logout</h1>
-      <button onClick={() => navigate("/")}>Home</button>
-      <button onClick={() => navigate("/pricing")}>Pricing</button>
+      <button onClick={handleHomeNavigate}>Home</button>
+      <button onClick={handlePricingNavigate}>Pricing</button>
       <button onClick={() => navigate("/auth/login")}>Login</button>
       <button onClick={() => navigate("/auth/logout")}>Logout</button>
-      <button onClick={() => navigate("/products/products-list")}>
-        Products
-      </button>
-      <button onClick={() => navigate("/products/product/:123")}>
-        product details
-      </button>
-      <button onClick={() => navigate("/unauthorized")}>Unauthorized</button>
+      <button onClick={handleProductListNavigate}>Products</button>
+      <button onClick={handleProductDetailsNavigate}>product details</button>
+      <button onClick={handleUnauthorizedNavigate}>Unauthorized</button>
       <button onClick={() => navigate("/sdf")}>Page not Found</button>
     </>
   );

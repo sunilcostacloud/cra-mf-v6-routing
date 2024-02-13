@@ -47,8 +47,8 @@ const Login = () => {
       <h1>Login</h1>
       <button onClick={handleHomeNavigate}>Home</button>
       <button onClick={handlePricingNavigate}>Pricing</button>
-      <button onClick={() => navigate("/login")}>Login</button>
-      <button onClick={() => navigate("/logout")}>Logout</button>
+      <button onClick={() => navigate("/auth/login")}>Login</button>
+      <button onClick={() => navigate("/auth/logout")}>Logout</button>
       <button onClick={handleProductListNavigate}>Products</button>
       <button onClick={handleProductDetailsNavigate}>product details</button>
       <button onClick={handleUnauthorizedNavigate}>Unauthorized</button>
