@@ -4,9 +4,11 @@ import Login from "../components/Login";
 import Logout from "../components/Logout";
 import PageNotFound from "../components/PageNotFound";
 
+var localRoot = document.getElementById("_auth-dev-root");
+
 export const routes = [
   {
-    path: "/",
+    path: localRoot ? "/auth" : "/",
     element: <Layout />,
     children: [
       {

@@ -10,8 +10,10 @@ const Logout = () => {
       <button onClick={() => navigate("/pricing")}>Pricing</button>
       <button onClick={() => navigate("/auth/login")}>Login</button>
       <button onClick={() => navigate("/auth/logout")}>Logout</button>
-      <button onClick={() => navigate("/products")}>Products</button>
-      <button onClick={() => navigate("/products/:123")}>
+      <button onClick={() => navigate("/products/products-list")}>
+        Products
+      </button>
+      <button onClick={() => navigate("/products/product/:123")}>
         product details
       </button>
       <button onClick={() => navigate("/unauthorized")}>Unauthorized</button>

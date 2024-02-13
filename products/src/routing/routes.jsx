@@ -4,9 +4,11 @@ import PageNotFound from "../components/PageNotFound";
 import ProductDetails from "../components/ProductDetails";
 import Products from "../components/Products";
 
+var localRoot = document.getElementById("products_root");
+
 export const routes = [
   {
-    path: "/",
+    path: localRoot ? "/products" : "/",
     element: <Layout />,
     children: [
       {
